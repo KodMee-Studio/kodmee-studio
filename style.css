@@ -36,6 +36,9 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .wrap {
@@ -60,25 +63,25 @@ header.site .wrap {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  min-height: 66px;
+  min-height: 70px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 11px;
+  gap: 13px;
   text-decoration: none;
   color: var(--gray);
 }
 
 .brand img {
-  width: 30px;
+  width: 41px;
   height: auto;
   display: block;
 }
 
 .brand b {
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.015em;
   color: var(--gray);
@@ -91,16 +94,17 @@ header.site .wrap {
 
 nav.site {
   display: flex;
-  gap: 26px;
+  align-items: center;
+  gap: 32px;
 }
 
 nav.site a {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 500;
   color: var(--gray-soft);
   text-decoration: none;
   padding: 4px 0;
-  border-bottom: 1.5px solid transparent;
+  border-bottom: 2px solid transparent;
   transition: color .15s ease, border-color .15s ease;
 }
 
@@ -110,11 +114,110 @@ nav.site a[aria-current="page"] {
   border-bottom-color: var(--teal);
 }
 
+/* ── Nav dropdown ─────────────────────────── */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-trigger {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--gray-soft);
+  padding: 4px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: color .15s ease;
+}
+
+.nav-trigger:hover,
+.nav-dropdown.is-open .nav-trigger {
+  color: var(--teal);
+}
+
+.nav-arrow {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-right: 2.5px solid currentColor;
+  border-bottom: 2.5px solid currentColor;
+  transform: rotate(45deg);
+  transform-origin: 50% 50%;
+  flex-shrink: 0;
+  opacity: 0.75;
+  transition: transform .2s ease;
+}
+
+.nav-dropdown.is-open .nav-arrow {
+  transform: rotate(-135deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  padding-inline-start: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  min-width: 200px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity .15s ease, transform .15s ease;
+  z-index: 20;
+}
+
+.nav-dropdown.is-open .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li::before {
+  display: none;
+}
+
+.dropdown-menu li > a {
+  display: block;
+  padding: 10px 20px 10px 20px;
+  border-bottom: none !important;
+}
+
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a[aria-current="page"] {
+  background: var(--teal-wash);
+  border-bottom-color: transparent !important;
+}
+
 /* ── Hero (index only) ────────────────────── */
 
 .hero {
   text-align: center;
-  padding: 92px 0 76px;
+  padding: 92px 0 0;
+}
+
+.hero + .wrap {
+  padding-top: 28px;
+}
+
+.hero .wrap {
+  padding-bottom: 76px;
   border-bottom: 1px solid var(--line-soft);
 }
 
@@ -145,7 +248,7 @@ nav.site a[aria-current="page"] {
 
 /* ── Page content ─────────────────────────── */
 
-main { padding-bottom: 110px; }
+main { padding-bottom: 110px; flex: 1; }
 
 .page-head {
   padding: 76px 0 4px;
@@ -302,7 +405,6 @@ ul li::before {
 footer.site {
   border-top: 1px solid var(--line);
   background: var(--paper-alt);
-  padding: 34px 0;
 }
 
 footer.site .wrap {
@@ -311,6 +413,7 @@ footer.site .wrap {
   justify-content: space-between;
   gap: 18px;
   flex-wrap: wrap;
+  min-height: 70px;
 }
 
 footer.site .copy {
@@ -334,12 +437,13 @@ footer.site nav a:hover { color: var(--teal); }
 @media (max-width: 600px) {
   body { font-size: 16px; }
   .wrap { padding: 0 20px; }
-  .hero { padding: 62px 0 52px; }
+  .hero { padding: 62px 0 0; }
+  .hero .wrap { padding-bottom: 52px; }
   .hero img { width: 170px; }
   .hero p { font-size: 17px; }
   .page-head { padding: 50px 0 4px; }
   h1 { font-size: 28px; }
-  nav.site { gap: 18px; }
-  header.site .wrap { min-height: 58px; }
+  nav.site { gap: 22px; }
+  header.site .wrap { min-height: 64px; }
   footer.site .wrap { flex-direction: column; align-items: flex-start; }
 }
