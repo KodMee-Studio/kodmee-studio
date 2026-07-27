@@ -92,6 +92,12 @@ header.site .wrap {
   color: var(--teal);
 }
 
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
 nav.site {
   display: flex;
   align-items: center;
@@ -203,6 +209,32 @@ nav.site a[aria-current="page"] {
 .dropdown-menu li > a[aria-current="page"] {
   background: var(--teal-wash);
   border-bottom-color: transparent !important;
+}
+
+/* ── Language dropdown ────────────────────── */
+
+.lang-dropdown .nav-trigger {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.lang-dropdown .dropdown-menu {
+  left: auto;
+  right: 0;
+  min-width: 150px;
+}
+
+.lang-dropdown .dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gray-soft);
+}
+
+.lang-dropdown .dropdown-menu a span {
+  font-size: 18px;
 }
 
 /* ── Hero (index only) ────────────────────── */
@@ -450,17 +482,21 @@ footer.site nav a:hover { color: var(--teal); }
   .brand { width: 100%; justify-content: center; }
   .brand img { width: 36px; }
   .brand b { font-size: 18px; }
-  nav.site {
+  .nav-group {
     width: 100%;
-    gap: 18px;
+    gap: 14px;
     flex-wrap: wrap;
+    justify-content: space-between;
     border-top: 1px solid var(--line-soft);
     margin-top: 12px;
     padding: 12px 0;
   }
+  nav.site { gap: 18px; flex-wrap: wrap; }
   nav.site a { font-size: 14px; }
   .nav-trigger { font-size: 14px; gap: 5px; }
   .dropdown-menu { min-width: 170px; }
+  .lang-dropdown .nav-trigger { font-size: 17px; }
+  .lang-dropdown .dropdown-menu { min-width: 140px; }
 
   /* Hero */
   .hero { padding: 52px 0 0; }

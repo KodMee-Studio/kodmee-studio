@@ -1,5 +1,5 @@
 (function () {
-  document.querySelectorAll('.nav-dropdown').forEach(function (dropdown) {
+  var dropdowns = Array.prototype.map.call(document.querySelectorAll('.nav-dropdown'), function (dropdown) {
     var trigger = dropdown.querySelector('.nav-trigger');
 
     function close() {
@@ -7,23 +7,33 @@
       trigger.setAttribute('aria-expanded', 'false');
     }
 
-    trigger.addEventListener('click', function () {
-      var willOpen = !dropdown.classList.contains('is-open');
-      dropdown.classList.toggle('is-open', willOpen);
-      trigger.setAttribute('aria-expanded', String(willOpen));
+    return { dropdown: dropdown, trigger: trigger, close: close };
+  });
+
+  dropdowns.forEach(function (entry) {
+    entry.trigger.addEventListener('click', function () {
+      var willOpen = !entry.dropdown.classList.contains('is-open');
+
+      // only one dropdown can be open at a time
+      dropdowns.forEach(function (other) {
+        if (other !== entry) other.close();
+      });
+
+      entry.dropdown.classList.toggle('is-open', willOpen);
+      entry.trigger.setAttribute('aria-expanded', String(willOpen));
     });
 
     // stop clicks inside the panel from reaching the document handler
-    dropdown.addEventListener('click', function (e) {
+    entry.dropdown.addEventListener('click', function (e) {
       e.stopPropagation();
     });
 
-    document.addEventListener('click', close);
+    document.addEventListener('click', entry.close);
 
-    dropdown.addEventListener('keydown', function (e) {
+    entry.dropdown.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
-        close();
-        trigger.focus();
+        entry.close();
+        entry.trigger.focus();
       }
     });
   });
