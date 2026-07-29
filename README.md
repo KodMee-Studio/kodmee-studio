@@ -9,9 +9,9 @@ Open any `.html` file directly in a browser to preview.
 |---|---|
 | `index.html` / `de/index.html` | Landing page (EN / DE) |
 | `legal-notice.html` / `de/legal-notice.html` | Legal notice / Impressum (§ 5 DDG) |
-| `privacy-policy/website.html` / `de/privacy-policy/website.html` | Website privacy policy (Art. 13 GDPR) |
-| `privacy-policy/handytools.html` / `de/privacy-policy/handytools.html` | Privacy policy for the HandyTools app |
-| `privacy-policy/neue-app.html` / `de/privacy-policy/neue-app.html` | Placeholder privacy policy template for the next app |
+| `privacy.html` / `de/privacy.html` | The site's own (non-app) privacy policy (Art. 13 GDPR) |
+| `handytools/support.html`, `handytools/privacy.html` (+ `de/handytools/...`) | Support and privacy policy for the HandyTools app |
+| `neue-app/support.html`, `neue-app/privacy.html` (+ `de/neue-app/...`) | Template folder for a new app — copy this to start one |
 | `style.css` | Brand colours + layout |
 | `site.js` | Nav dropdown toggle + footer year |
 | `logo.png` | Full lockup — used in the hero |
@@ -19,11 +19,11 @@ Open any `.html` file directly in a browser to preview.
 | `favicon.png` | Browser tab icon |
 | `CNAME` | GitHub Pages custom domain |
 
-All pages share the same header/footer shell — copy an existing page's structure when adding a new one. The header's "Privacy Policies" nav item is a dropdown (see `.nav-dropdown` in `style.css`, wired up in `site.js`) listing each privacy policy page.
+All pages share the same header/footer shell — copy an existing page's structure when adding a new one. The header's "Apps" nav item is a dropdown (see `.nav-dropdown` in `style.css`, wired up in `site.js`) listing each app, linking to that app's support page (which in turn links to its own privacy policy). The footer links to the site's own `privacy.html`, not the per-app ones.
 
 ## Languages
 
-English is the default and lives at the site root (`index.html`, `privacy-policy/...`). German is a full duplicate of every page under `de/`, mirroring the exact same structure one level deeper (`de/index.html`, `de/privacy-policy/website.html`, etc.) — extensions are kept as `.html` (not extensionless folder URLs), so every page is still a plain file openable directly, both locally via `file://` and once deployed.
+English is the default and lives at the site root (`index.html`, `<app>/support.html`, `<app>/privacy.html`, ...). German is a full duplicate of every page under `de/`, mirroring the exact same structure one level deeper (`de/index.html`, `de/handytools/privacy.html`, etc.) — extensions are kept as `.html` (not extensionless folder URLs), so every page is still a plain file openable directly, both locally via `file://` and once deployed.
 
 The header has a flag-based language switcher: a `.nav-dropdown.lang-dropdown` (same component as "Privacy Policies", reusing its CSS/JS) showing only the current language's flag with a dropdown arrow; opening it reveals the other language. Each language's internal nav/footer links stay entirely within that language's tree (a page under `de/` only links to other pages under `de/`) — only the lang-dropdown link crosses between the two trees, and it always points at the *same* page's other-language version, not the homepage.
 
@@ -39,12 +39,12 @@ Gray   rgb(70,80,90)     #46505A
 Both are set as CSS variables at the top of `style.css` (`--teal`, `--gray`).
 Change them there and they propagate everywhere.
 
-## Adding a new app's privacy policy
+## Adding a new app
 
-1. Copy `privacy-policy/neue-app.html` to `privacy-policy/<app>.html`, and `de/privacy-policy/neue-app.html` to `de/privacy-policy/<app>.html`.
-2. Fill in every yellow-highlighted `<span class="fill">` placeholder in both files, then delete the `.fill` spans (leave the `.fill` CSS rule in `style.css` — other in-progress pages may still use it).
-3. Add a `<li><a href="privacy-policy/<app>.html">...</a></li>` entry to the "Privacy Policies" dropdown on every English page, and the equivalent `de/privacy-policy/<app>.html` entry on every German page (see `.dropdown-menu` in each HTML file).
-4. Submit each language's URL to Play Console / App Store Connect — each store wants its own URL.
+1. Copy the `neue-app/` folder to `<app>/`, and `de/neue-app/` to `de/<app>/`.
+2. Fill in every yellow-highlighted `<span class="fill">` placeholder across all four files (`support.html` and `privacy.html`, both languages), then delete the `.fill` spans (leave the `.fill` CSS rule in `style.css` — other in-progress pages may still use it).
+3. Add a `<li><a href="<app>/support.html">...</a></li>` entry to the "Apps" dropdown on every English page, and the equivalent `de/<app>/support.html` entry on every German page (see `.dropdown-menu` in each HTML file).
+4. Submit each language's support and privacy URLs to Play Console / App Store Connect — each store wants its own URLs.
 
 ## No external fonts — deliberate
 
@@ -62,11 +62,17 @@ Same reason there is no analytics and no cookie banner: nothing to consent to.
 
 ## Custom domain
 
-The current `CNAME` points this site at `docs.kodmee-studio.com`. DNS at the registrar should have a `CNAME` record for that subdomain pointing to `<your-github-user>.github.io`. After DNS propagates, tick **Enforce HTTPS** in Settings → Pages.
+The `CNAME` file points this site at the apex domain `kodmee-studio.com`. DNS (managed on Cloudflare) needs:
+
+- Four `A` records on `kodmee-studio.com` (the apex) pointing at GitHub Pages' IPs: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.
+- A `CNAME` record on `www` pointing at `<your-github-org>.github.io`.
+
+Both must be set to **DNS only** (grey cloud) in Cloudflare, not proxied — GitHub can't issue its Let's Encrypt certificate for the custom domain through Cloudflare's proxy. After DNS propagates, set the custom domain in Settings → Pages and tick **Enforce HTTPS**.
 
 ## URLs
 
-- Legal notice → `https://docs.kodmee-studio.com/legal-notice.html` (German: `/de/legal-notice.html`)
-- Website privacy policy → `https://docs.kodmee-studio.com/privacy-policy/website.html` (German: `/de/privacy-policy/website.html`)
-- Per-app privacy policies → `https://docs.kodmee-studio.com/privacy-policy/<app>.html` (German: `/de/privacy-policy/<app>.html`)
-  (Play Console + App Store Connect each want the app's own URL)
+- Legal notice → `https://kodmee-studio.com/legal-notice.html` (German: `/de/legal-notice.html`)
+- Website privacy policy → `https://kodmee-studio.com/privacy.html` (German: `/de/privacy.html`)
+- Per-app privacy policies → `https://kodmee-studio.com/<app>/privacy.html` (German: `/de/<app>/privacy.html`)
+- Per-app support pages → `https://kodmee-studio.com/<app>/support.html` (German: `/de/<app>/support.html`)
+  (Play Console + App Store Connect each want the app's own support/privacy URL)
