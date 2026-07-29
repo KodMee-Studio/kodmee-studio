@@ -132,8 +132,10 @@ nav.site a[aria-current="page"] {
   font-family: inherit;
   font-size: 17px;
   font-weight: 500;
+  line-height: inherit;
   color: var(--gray-soft);
   padding: 4px 0;
+  border-bottom: 2px solid transparent;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -231,6 +233,7 @@ nav.site a[aria-current="page"] {
   font-size: 15px;
   font-weight: 500;
   color: var(--gray-soft);
+  text-decoration: none;
 }
 
 .lang-dropdown .dropdown-menu a span {
