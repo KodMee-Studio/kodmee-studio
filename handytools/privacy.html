@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy HandyTools — KodMee Studio</title>
-<meta name="description" content="Privacy policy for the HandyTools app by KodMee Studio, covering AdMob advertising and your GDPR rights.">
+<meta name="description" content="Privacy policy for the HandyTools app by KodMee Studio, covering AdMob advertising, Firebase analytics and diagnostics, camera and microphone use, and your GDPR rights.">
 <link rel="icon" href="../favicon.png" type="image/png">
 <link rel="stylesheet" href="../style.css">
 <link rel="alternate" hreflang="en" href="privacy.html">
@@ -47,8 +47,14 @@
 
     <div class="page-head">
       <h1>HandyTools Privacy Policy</h1>
-      <p class="lede">Last updated: July 29, 2026</p>
+      <p class="lede">Last updated: September 9, 2026</p>
     </div>
+
+    <p>
+      HandyTools is a collection of on-device measurement tools published on
+      Google Play and the Apple App Store. This policy explains what the app
+      processes and what our partners receive.
+    </p>
 
     <h2>Controller</h2>
     <address>
@@ -62,20 +68,51 @@
 
     <h2>What Data Is Processed?</h2>
     <p>
-      HandyTools itself does not store any personal data and does not
-      transmit any user data to us or third parties. All app data (e.g.
-      settings) remains exclusively on your device.
+      Apart from advertising and, on Android, the analytics and diagnostics
+      described below, HandyTools does not collect or transmit personal data.
+      Your settings and anything you create in the tools stay on your device.
     </p>
     <p>
       The app integrates Google AdMob to display advertising. Depending on
       your consent, AdMob may process the following data:
     </p>
     <ul>
-      <li>Advertising ID (IDFA / GAID) and device identifiers</li>
+      <li>Advertising ID (GAID on Android, IDFA on iOS) and device identifiers</li>
       <li>Device information (model, OS version, language)</li>
       <li>Approximate location (based on IP address)</li>
       <li>Usage data and interactions with ads</li>
     </ul>
+
+    <h2>Camera and Microphone</h2>
+    <p>
+      Two tools ask for a device permission the first time you use them: the
+      Color Picker uses the camera to read colours from the live preview, and
+      the Sound Meter uses the microphone to measure the ambient sound level.
+      All processing happens on your device in real time — no photo, video, or
+      audio recording is created, saved, transmitted, or shared. You can deny
+      or later revoke either permission in your device settings, and the rest
+      of the app keeps working.
+    </p>
+
+    <h2>Analytics and Diagnostics (Firebase, Android only)</h2>
+    <p>On Android, the app uses two Google Firebase services:</p>
+    <ul>
+      <li>
+        <b>Firebase Analytics:</b> aggregated, non-identifying usage events
+        (for example which tool is opened) that show us which features matter
+        most.
+      </li>
+      <li>
+        <b>Firebase Crashlytics:</b> crash reports and technical diagnostics
+        (device model, OS version, stack trace, and the app state just before
+        a crash) so we can fix stability problems. Google retains this data
+        for up to 90 days.
+      </li>
+    </ul>
+    <p>
+      Google LLC processes this data on our behalf. It is not used to build an
+      advertising profile and is not linked to your identity.
+    </p>
 
     <h2>Consent and Consent Management (UMP SDK)</h2>
     <p>
@@ -114,9 +151,10 @@
     <h2>Data Transfer to Google</h2>
     <p>
       Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA)
-      is an independent controller for AdMob data. The transfer to the USA
-      is based on standard contractual clauses and the EU–US Data Privacy
-      Framework. For more information please see
+      is an independent controller for AdMob data and, on Android, a
+      processor for the Firebase data above. Transfers to the USA are based
+      on standard contractual clauses and the EU–US Data Privacy Framework.
+      For more information please see
       <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">
         Google's Privacy Policy</a>.
     </p>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Datenschutzerklärung HandyTools — KodMee Studio</title>
-<meta name="description" content="Datenschutzerklärung der App HandyTools von KodMee Studio zu Google AdMob und Ihren Rechten nach der DSGVO.">
+<meta name="description" content="Datenschutzerklärung der App HandyTools von KodMee Studio zu Google AdMob, Firebase-Analyse und -Diagnose, Kamera- und Mikrofonnutzung und Ihren Rechten nach der DSGVO.">
 <link rel="icon" href="../../favicon.png" type="image/png">
 <link rel="stylesheet" href="../../style.css">
 <link rel="alternate" hreflang="en" href="../../handytools/privacy.html">
@@ -47,8 +47,15 @@
 
     <div class="page-head">
       <h1>Datenschutzerklärung HandyTools</h1>
-      <p class="lede">Zuletzt aktualisiert: 29. Juli 2026</p>
+      <p class="lede">Zuletzt aktualisiert: 9. September 2026</p>
     </div>
+
+    <p>
+      HandyTools ist eine Sammlung von Mess-Werkzeugen, die lokal auf dem
+      Gerät arbeiten und über Google Play und den Apple App Store
+      veröffentlicht werden. Diese Erklärung beschreibt, welche Daten die App
+      verarbeitet und was unsere Partner erhalten.
+    </p>
 
     <h2>Verantwortlicher</h2>
     <address>
@@ -62,20 +69,55 @@
 
     <h2>Welche Daten werden verarbeitet?</h2>
     <p>
-      HandyTools selbst speichert keine personenbezogenen Daten und
-      übermittelt keine Nutzerdaten an uns oder Dritte. Sämtliche App-Daten
-      (z. B. Einstellungen) verbleiben ausschließlich auf Ihrem Gerät.
+      Abgesehen von Werbung sowie – unter Android – der nachfolgend
+      beschriebenen Analyse und Diagnose erhebt oder übermittelt HandyTools
+      keine personenbezogenen Daten. Ihre Einstellungen und alles, was Sie
+      in den Werkzeugen erstellen, verbleiben auf Ihrem Gerät.
     </p>
     <p>
       Die App bindet Google AdMob zur Anzeige von Werbung ein. Je nach Ihrer
       Einwilligung kann AdMob folgende Daten verarbeiten:
     </p>
     <ul>
-      <li>Werbe-ID (IDFA / GAID) und Geräte-Kennungen</li>
+      <li>Werbe-ID (GAID unter Android, IDFA unter iOS) und Geräte-Kennungen</li>
       <li>Geräteinformationen (Modell, Betriebssystemversion, Sprache)</li>
       <li>Ungefährer Standort (auf Basis der IP-Adresse)</li>
       <li>Nutzungsdaten und Interaktionen mit Anzeigen</li>
     </ul>
+
+    <h2>Kamera und Mikrofon</h2>
+    <p>
+      Zwei Werkzeuge fragen bei der ersten Nutzung eine Geräteberechtigung
+      ab: der Color Picker nutzt die Kamera, um Farben aus der Live-Vorschau
+      auszulesen, und der Sound Meter nutzt das Mikrofon, um den
+      Umgebungsschallpegel zu messen. Die gesamte Verarbeitung erfolgt in
+      Echtzeit auf Ihrem Gerät — es werden keine Foto-, Video- oder
+      Audioaufnahmen erstellt, gespeichert, übermittelt oder weitergegeben.
+      Sie können beide Berechtigungen in den Geräteeinstellungen verweigern
+      oder später entziehen; der Rest der App funktioniert weiterhin.
+    </p>
+
+    <h2>Analyse und Diagnose (Firebase, nur Android)</h2>
+    <p>Unter Android nutzt die App zwei Google-Firebase-Dienste:</p>
+    <ul>
+      <li>
+        <b>Firebase Analytics:</b> aggregierte, nicht identifizierende
+        Nutzungsereignisse (z. B. welches Werkzeug geöffnet wird), die uns
+        zeigen, welche Funktionen am wichtigsten sind.
+      </li>
+      <li>
+        <b>Firebase Crashlytics:</b> Absturzberichte und technische
+        Diagnosedaten (Gerätemodell, Betriebssystemversion, Stack-Trace und
+        der App-Zustand kurz vor einem Absturz), damit wir
+        Stabilitätsprobleme beheben können. Google speichert diese Daten bis
+        zu 90 Tage.
+      </li>
+    </ul>
+    <p>
+      Google LLC verarbeitet diese Daten in unserem Auftrag. Sie werden
+      nicht zur Erstellung eines Werbeprofils verwendet und nicht mit Ihrer
+      Identität verknüpft.
+    </p>
 
     <h2>Einwilligung und Einwilligungsverwaltung (UMP SDK)</h2>
     <p>
@@ -116,9 +158,11 @@
     <h2>Datenübermittlung an Google</h2>
     <p>
       Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA)
-      ist eigenständiger Verantwortlicher für AdMob-Daten. Die Übermittlung
-      in die USA erfolgt auf Grundlage von Standardvertragsklauseln sowie des
-      EU-US Data Privacy Framework. Weitere Informationen finden Sie in der
+      ist eigenständiger Verantwortlicher für AdMob-Daten und – unter
+      Android – Auftragsverarbeiter für die oben genannten Firebase-Daten.
+      Die Übermittlung in die USA erfolgt auf Grundlage von
+      Standardvertragsklauseln sowie des EU-US Data Privacy Framework.
+      Weitere Informationen finden Sie in der
       <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">
         Datenschutzerklärung von Google</a>.
     </p>
