@@ -2,12 +2,19 @@
 
 Tracking issue: https://github.com/KodMee-Studio/leave-api/issues/253
 
-Status: local draft, not approved for publication. The HTML describes observed
-behavior, but is not yet a complete, approved Art. 13 notice. In particular,
-it does not yet state a settled legal basis for analytics or browser storage,
-or the holiday service's confirmed log/analytics retention. Do not close the
-issue or publish this branch until the decisions below are resolved in both
-policy languages. Linking provider policies does not replace our own notice.
+Status: PR #1 was merged and the owner approved the page structure and shortened
+wording. The owner subsequently confirmed that the origin is their own server
+on their private local network, within their tailnet, and confirmed use of
+developers@kodmee-studio.com. Public DNS MX records point to Zoho's EU mail
+endpoints. Both policy languages now describe those facts and the configured
+size-based rotation of technical logs. No private IP, tailnet hostname or
+physical street location of the server is disclosed in the policy.
+
+These confirmations do not settle analytics/browser-storage legal bases,
+account-level edge/analytics retention, provider contracts or transfer safeguards.
+Keep those questions tracked; linking provider policies does not replace our
+own disclosures. No arbitrary retention period or EU-only processing guarantee
+has been added.
 
 ## Changes prepared
 
@@ -39,13 +46,15 @@ policy languages. Linking provider policies does not replace our own notice.
 | Log rotation | `deploy/compose.yaml`: Docker json-file, 10 MB × 5 per container. This is a size cap, not a time-based retention policy; host settings and copies/backups must be checked. |
 | Analytics retention | D42 describes six months of report history. Cloudflare's current FAQ separately describes seven days of unsampled data and sampled longer-term storage. Do not treat either as proof of this account's deletion schedule. |
 
-## Decisions needed before publication
+## Remaining verification and decisions
 
 1. **Controller and legal notice.** Confirm that the existing Emir Mesic / KodMee
    Studio identity, postal address and other legal-notice particulars also apply
    to the public holiday service. Nothing in this branch changes those details.
-2. **Hosting and recipients.** Confirm origin-server location, the hosting
-   provider if any, Cloudflare contracting entity, applicable data processing
+2. **Hosting and recipients.** Self-hosting on the owner's local network and
+   administrative tailnet access are confirmed. Mail is routed to Zoho EU MX
+   endpoints; this does not prove that all processing is EU-only. Confirm
+   the physical country if needed, Cloudflare/Zoho contracting entities, applicable data processing
    agreements, subprocessors and international-transfer mechanisms. The draft
    links the public provider terms without claiming that a particular mechanism
    has been agreed for this account.
@@ -65,12 +74,13 @@ policy languages. Linking provider policies does not replace our own notice.
    prior blocking and withdrawal before publishing a claim that consent is
    obtained. An alternative is to disable the optional beacon while this is
    assessed; this branch does not change staging settings.
-6. **Error-report mail.** Confirm control of developers@kodmee-studio.com,
-   e-mail provider/recipients, transfers and retention/deletion practice. The
+6. **Error-report mail.** The owner confirmed use of developers@kodmee-studio.com;
+   its domain's MX records identify Zoho. Confirm any forwarding/other recipients,
+   transfers and retention/deletion practice. The
    existing contact section uses purpose-based deletion; confirm it is followed
    and add any necessary service-specific disclosures.
 7. **Final factual/legal approval.** Review both language versions, settle the
-   proposed Art. 6(1)(f) basis for necessary delivery/security processing, add the
+   Art. 6(1)(f) basis stated for necessary delivery/security processing, add the
    missing service-specific legal bases and retention information, and remove
    the draft status only when the notice matches the deployed service.
 

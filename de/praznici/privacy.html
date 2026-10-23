@@ -69,11 +69,15 @@
 
     <h2>Hosting und Sicherheit</h2>
     <p>
-      KodMee Studio betreibt die Website auf einem Server und nutzt Cloudflare
-      zur Auslieferung und Absicherung. Cloudflare verarbeitet IP-Adressen und
+      KodMee Studio betreibt die Website auf einem eigenen Server im privaten lokalen
+      Netzwerk. Der administrative Zugriff erfolgt über ein Tailscale-VPN; die
+      öffentlichen Seiten werden über Cloudflare Tunnel und die Sicherheitsdienste
+      von Cloudflare bereitgestellt. Cloudflare verarbeitet IP-Adressen und
       Anfragedaten; unser Server führt technische Anfrageprotokolle für einen
-      zuverlässigen Betrieb und die Fehlerdiagnose. Als Rechtsgrundlage ist unser
-      berechtigtes Interesse am sicheren Betrieb vorgesehen (Art. 6 Abs. 1 lit. f DSGVO).
+      zuverlässigen Betrieb und die Fehlerdiagnose. Technische Protokolle rotieren
+      automatisch nach den eingestellten Speichergrenzen. Rechtsgrundlage für
+      Auslieferung und Sicherheit ist unser berechtigtes Interesse am sicheren
+      Betrieb (Art. 6 Abs. 1 lit. f DSGVO).
       Cloudflare erläutert Verarbeitung und internationale Übermittlungen in seiner
       <a href="https://www.cloudflare.com/privacypolicy/">Datenschutzerklärung</a> und
       <a href="https://www.cloudflare.com/cloudflare-customer-dpa/">Vereinbarung zur Auftragsverarbeitung</a>.
@@ -106,6 +110,8 @@
       Der Fehler-Link öffnet einen E-Mail-Entwurf an
       <span class="mail">developers@kodmee-studio.com</span> mit Kalender, Jahr,
       Sprache und Seitenadresse. Erst wenn Sie selbst absenden, wird er verschickt.
+      E-Mails werden über Zoho Mail verarbeitet; siehe
+      <a href="https://www.zoho.com/privacy.html">Zoho-Datenschutzerklärung</a>.
       Wir verwenden Absenderdaten und Nachricht zur Bearbeitung Ihrer Anfrage
       (Art. 6 Abs. 1 lit. b oder f DSGVO) und löschen sie, sobald sie nicht mehr
       benötigt werden, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.

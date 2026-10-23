@@ -31,9 +31,11 @@ the corporate site does not embed, preload or preconnect to the holiday app.
 The corporate privacy policy links to both app policies. The shared legal
 notice names both websites.
 
-The GH-253 privacy changes are a local draft pending the owner confirmations in
-[`docs/GH-253-review.md`](docs/GH-253-review.md). Do not deploy this draft until
-those points are resolved and both policy languages reflect the final decisions.
+The owner reviewed the GH-253 page structure and shortened policy wording and
+confirmed self-hosting on a private local network and the contact mailbox.
+Mail routing uses Zoho. Evidence and remaining privacy questions are recorded in
+[`docs/GH-253-review.md`](docs/GH-253-review.md); confirmed hosting details do not
+settle the separate retention and device-access questions.
 
 ## Languages
 

@@ -68,10 +68,13 @@
 
     <h2>Hosting and security</h2>
     <p>
-      KodMee Studio operates the website on a server using Cloudflare for delivery
-      and security. Cloudflare processes IP addresses and request data; our server
+      KodMee Studio hosts the website on its own server in a private local network.
+      Administrative access uses a Tailscale VPN; public pages are delivered through
+      Cloudflare Tunnel and Cloudflare's security services.
+      Cloudflare processes IP addresses and request data; our server
       records technical request logs to keep the service reliable and diagnose faults.
-      The proposed legal basis is our legitimate interest in secure operation
+      Technical logs rotate automatically according to configured storage limits.
+      The legal basis for delivery and security is our legitimate interest in secure operation
       (Art. 6(1)(f) GDPR). Cloudflare explains its processing and international
       transfers in its <a href="https://www.cloudflare.com/privacypolicy/">privacy policy</a>
       and <a href="https://www.cloudflare.com/cloudflare-customer-dpa/">data processing addendum</a>.
@@ -103,6 +106,8 @@
       The error-report link opens an e-mail draft to
       <span class="mail">developers@kodmee-studio.com</span> with the calendar,
       year, language and page address. Nothing is sent until you send it yourself.
+      E-mails are handled through Zoho Mail; see
+      <a href="https://www.zoho.com/privacy.html">Zoho's privacy policy</a>.
       We use your sender details and message to handle your enquiry
       (Art. 6(1)(b) or (f) GDPR), then delete them when no longer needed, subject
       to legal retention duties. Please do not send employee records or information
