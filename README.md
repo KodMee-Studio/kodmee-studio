@@ -9,8 +9,9 @@ Open any `.html` file directly in a browser to preview.
 |---|---|
 | `index.html` / `de/index.html` | Landing page (EN / DE) |
 | `legal-notice.html` / `de/legal-notice.html` | Legal notice / Impressum (§ 5 DDG) |
-| `privacy.html` / `de/privacy.html` | The site's own (non-app) privacy policy (Art. 13 GDPR) |
+| `privacy.html` / `de/privacy.html` | Corporate website privacy policy, linking to each app's own policy (Art. 13 GDPR) |
 | `handytools/support.html`, `handytools/privacy.html` (+ `de/handytools/...`) | Support and privacy policy for the HandyTools app |
+| `praznici/support.html`, `praznici/privacy.html` (+ `de/praznici/...`) | Public Holidays information/support and separate app privacy policy |
 | `neue-app/support.html`, `neue-app/privacy.html` (+ `de/neue-app/...`) | Template folder for a new app — copy this to start one |
 | `style.css` | Brand colours + layout |
 | `site.js` | Nav dropdown toggle + footer year |
@@ -20,6 +21,19 @@ Open any `.html` file directly in a browser to preview.
 | `CNAME` | GitHub Pages custom domain |
 
 All pages share the same header/footer shell — copy an existing page's structure when adding a new one. The header's "Apps" nav item is a dropdown (see `.nav-dropdown` in `style.css`, wired up in `site.js`) listing each app, linking to that app's support page (which in turn links to its own privacy policy). The footer links to the site's own `privacy.html`, not the per-app ones.
+
+Public Holidays / Praznici follows the HandyTools pattern: Apps on every EN/DE
+page links to its support page, which links to its own privacy policy. The
+support page ends with an Open button linking to
+`https://praznici.kodmee-studio.com/` in a new tab with `noopener noreferrer`.
+The existing dropdown is also the mobile navigation. These are ordinary links;
+the corporate site does not embed, preload or preconnect to the holiday app.
+The corporate privacy policy links to both app policies. The shared legal
+notice names both websites.
+
+The GH-253 privacy changes are a local draft pending the owner confirmations in
+[`docs/GH-253-review.md`](docs/GH-253-review.md). Do not deploy this draft until
+those points are resolved and both policy languages reflect the final decisions.
 
 ## Languages
 
@@ -53,7 +67,10 @@ Embedding fonts from Google's servers passes visitor IP addresses to the US and
 has been ruled a GDPR violation by German courts — it triggered a wave of
 Abmahnungen. If you want a custom typeface, self-host the font files.
 
-Same reason there is no analytics and no cookie banner: nothing to consent to.
+The corporate site loads no analytics and has no cookie banner. This statement
+does not describe the separate holiday application: its analytics and automatic
+browser storage are documented in the app's own policy and require the owner review
+recorded in `docs/GH-253-review.md`.
 
 ## Deploy — GitHub Pages
 

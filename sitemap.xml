@@ -37,4 +37,28 @@
   <url>
     <loc>https://kodmee-studio.com/de/handytools/privacy.html</loc>
   </url>
+  <url>
+    <loc>https://kodmee-studio.com/praznici/support.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kodmee-studio.com/praznici/support.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kodmee-studio.com/de/praznici/support.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kodmee-studio.com/praznici/support.html"/>
+  </url>
+  <url>
+    <loc>https://kodmee-studio.com/de/praznici/support.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kodmee-studio.com/praznici/support.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kodmee-studio.com/de/praznici/support.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kodmee-studio.com/praznici/support.html"/>
+  </url>
+  <url>
+    <loc>https://kodmee-studio.com/praznici/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kodmee-studio.com/praznici/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kodmee-studio.com/de/praznici/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kodmee-studio.com/praznici/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://kodmee-studio.com/de/praznici/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kodmee-studio.com/praznici/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kodmee-studio.com/de/praznici/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kodmee-studio.com/praznici/privacy.html"/>
+  </url>
 </urlset>
