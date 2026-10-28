@@ -15,6 +15,9 @@
   --line-soft:   #f1f3f5;
   --paper:       #ffffff;
   --paper-alt:   #fafbfb;
+  --paper-sunk:  #f2f4f6;
+  --feature:     #12403f;
+  --feature-ink: #eff6f6;
 
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
@@ -465,6 +468,189 @@ ul li::before {
   font-weight: 600;
 }
 
+/* ── App support page ─────────────────────── */
+
+main.support { background: var(--paper-sunk); }
+
+/* each sentence wraps as a whole onto its own line */
+main.support .lede span { display: inline-block; }
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(28, 33, 38, 0.06);
+}
+
+/* Cards side by side: badges share a height. Stacked: badges share a width. */
+.download-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.store-card {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.store-card .app > div { min-width: 0; }
+
+.store-card .app {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.store-card .app img {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  display: block;
+  flex: none;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.store-card .app b {
+  display: block;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--gray);
+}
+
+.store-card .app span {
+  display: block;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--gray-soft);
+}
+
+.store-badge {
+  display: inline-flex;
+  flex: none;
+  transition: opacity .15s ease;
+}
+
+.store-badge:hover { opacity: 0.8; }
+.store-badge img {
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+@media (min-width: 960px) {
+  .download-grid { grid-template-columns: 1fr 1fr; }
+  .store-badge img { width: auto; height: 60px; }
+}
+
+.faq { overflow: hidden; }
+
+.faq details + details { border-top: 1px solid var(--line-soft); }
+
+.faq summary {
+  list-style: none;
+  min-height: 56px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--gray);
+  transition: background .15s ease;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:hover { background: var(--paper-alt); }
+
+.faq summary svg,
+.link-card svg {
+  flex: none;
+  color: var(--gray-faint);
+  transition: transform .16s ease;
+}
+
+.faq details[open] summary svg { transform: rotate(180deg); }
+
+.faq details p {
+  margin: 0;
+  padding: 0 20px 18px;
+  max-width: 680px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--gray-soft);
+}
+
+.faq .inline-icon {
+  display: inline-block;
+  vertical-align: -3px;
+  margin: 0 2px;
+  color: var(--gray);
+}
+
+.link-card {
+  min-height: 56px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--gray);
+  text-decoration: none;
+  transition: background .15s ease;
+}
+
+.link-card:hover { background: var(--paper-alt); color: var(--gray); }
+.link-card strong { color: var(--teal-deep); font-weight: 600; }
+
+.contact-card {
+  background: var(--feature);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contact-card p {
+  margin: 0;
+  flex: 1 1 300px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--feature-ink);
+}
+
+.mail-button {
+  height: 50px;
+  padding: 0 22px;
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--teal-deep);
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex: none;
+  max-width: 100%;
+  transition: background .15s ease;
+}
+
+.mail-button:hover { background: var(--teal-wash); color: var(--teal-deep); }
+.mail-button span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
 /* ── Footer ───────────────────────────────── */
 
 footer.site {
@@ -544,6 +730,27 @@ footer.site nav a:hover { color: var(--teal); }
   main { padding-bottom: 70px; }
   address { font-size: 13.5px; word-break: break-word; }
   address .mail { display: block; }
+
+  /* App support page */
+  main.support .page-head { padding-top: 24px; }
+  main.support .page-head + h2 { margin-top: 32px; }
+  .store-card { padding: 16px; gap: 12px; }
+  .store-card .app { gap: 10px; }
+  .store-card .app img { width: 48px; height: 48px; border-radius: 11px; }
+  .store-card .app b { font-size: 15px; }
+  .store-card .app span { font-size: 12.5px; }
+  .store-card .app b,
+  .store-card .app span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* badge shrinks with the viewport (same in both cards) instead of wrapping */
+  .store-badge img { width: min(200px, calc(100vw - 216px)); }
+  .contact-card { padding: 20px 16px; }
+  .mail-button {
+    width: 100%;
+    justify-content: center;
+    padding: 0 14px;
+    gap: 8px;
+    font-size: 15px;
+  }
 
   /* Footer */
   footer.site .wrap {
