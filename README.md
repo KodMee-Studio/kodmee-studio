@@ -24,7 +24,7 @@ All pages share the same header/footer shell — copy an existing page's structu
 
 Public Holidays / Praznici follows the HandyTools pattern: Apps on every EN/DE
 page links to its support page, which links to its own privacy policy. The
-support page ends with an Open button linking to
+support page opens with an Open button linking to
 `https://praznici.kodmee-studio.com/` in a new tab with `noopener noreferrer`.
 The existing dropdown is also the mobile navigation. These are ordinary links;
 the corporate site does not embed, preload or preconnect to the holiday app.
