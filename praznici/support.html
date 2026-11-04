@@ -13,33 +13,29 @@
 </head>
 <body>
 
-<header class="site">
+<header class="site-header">
   <div class="wrap">
     <a class="brand" href="../index.html">
       <img src="../mark.png" alt="">
       <b>KodMee Studio</b>
     </a>
-    <div class="nav-group">
-      <nav class="site">
-        <a href="../index.html">Home</a>
-        <div class="nav-dropdown">
-          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Apps <span class="nav-arrow"></span></button>
-          <ul class="dropdown-menu" role="list">
-            <li><a href="../handytools/support.html">HandyTools</a></li>
-            <li><a href="support.html" aria-current="page">Public Holidays</a></li>
-          </ul>
-        </div>
-        <a href="../index.html#contact">Contact</a>
-      </nav>
-      <div class="nav-dropdown lang-dropdown">
-        <button class="nav-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Language: English">
-          <span aria-hidden="true">🇺🇸</span><span class="nav-arrow"></span>
-        </button>
+    <nav class="site-nav" aria-label="Main">
+      <a class="site-nav-link" href="../index.html">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">Apps <span class="nav-arrow"></span></button>
         <ul class="dropdown-menu" role="list">
-          <li><a href="../de/praznici/support.html"><span aria-hidden="true">🇩🇪</span> Deutsch</a></li>
+          <li><a href="../handytools/support.html"><img src="../handytools/img/icon.png" alt=""><span><b>HandyTools</b>Support</span></a></li>
+          <li><a href="support.html" aria-current="page"><span class="menu-tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg></span><span><b>Public Holidays</b>Support</span></a></li>
         </ul>
       </div>
-    </div>
+      <a class="site-nav-link" href="../index.html#services">Services</a>
+      <a class="site-nav-link" href="../index.html#contact">Contact</a>
+      <div class="site-nav-divider"></div>
+      <div class="lang-switch" data-lang="en" role="group" aria-label="Language">
+        <span aria-current="true">EN</span>
+        <a href="../de/praznici/support.html" hreflang="de" lang="de" aria-label="Deutsch">DE</a>
+      </div>
+    </nav>
   </div>
 </header>
 
@@ -120,13 +116,14 @@
   </div>
 </main>
 
-<footer class="site">
+<footer class="site-footer">
   <div class="wrap">
-    <span class="copy">© <span id="copy-year">2026</span> KodMee Studio</span>
-    <nav>
+    <span>© <span id="copy-year">2026</span> KodMee Studio</span>
+    <nav aria-label="Footer">
       <a href="../index.html">Home</a>
-      <a href="../legal-notice.html">Legal Notice</a>
-      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../legal-notice.html">Legal notice</a>
+      <a href="../privacy.html">Privacy policy</a>
+      <a href="mailto:developers@kodmee-studio.com">Contact</a>
     </nav>
   </div>
 </footer>

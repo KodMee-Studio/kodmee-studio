@@ -38,6 +38,26 @@
     });
   });
 
+  // Language switch: slide the thumb first, then open the other language
+  var langSwitch = document.querySelector('.lang-switch');
+  if (langSwitch) {
+    var currentLang = langSwitch.getAttribute('data-lang');
+    var langLink = langSwitch.querySelector('a');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    langLink.addEventListener('click', function (e) {
+      if (reduceMotion || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      langSwitch.setAttribute('data-lang', currentLang === 'en' ? 'de' : 'en');
+      setTimeout(function () { window.location.href = langLink.href; }, 180);
+    });
+
+    // back button may restore this page with the thumb still on the other side
+    window.addEventListener('pageshow', function () {
+      langSwitch.setAttribute('data-lang', currentLang);
+    });
+  }
+
   var copyYear = document.getElementById('copy-year');
   if (copyYear) {
     copyYear.textContent = new Date().getFullYear();
