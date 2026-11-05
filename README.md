@@ -31,12 +31,6 @@ the corporate site does not embed, preload or preconnect to the holiday app.
 The corporate privacy policy links to both app policies. The shared legal
 notice names both websites.
 
-The owner reviewed the GH-253 page structure and shortened policy wording and
-confirmed self-hosting on a private local network and the contact mailbox.
-Mail routing uses Zoho. Evidence and remaining privacy questions are recorded in
-[`docs/GH-253-review.md`](docs/GH-253-review.md); confirmed hosting details do not
-settle the separate retention and device-access questions.
-
 ## Languages
 
 English is the default and lives at the site root (`index.html`, `<app>/support.html`, `<app>/privacy.html`, ...). German is a full duplicate of every page under `de/`, mirroring the exact same structure one level deeper (`de/index.html`, `de/handytools/privacy.html`, etc.) — extensions are kept as `.html` (not extensionless folder URLs), so every page is still a plain file openable directly, both locally via `file://` and once deployed.
@@ -70,9 +64,7 @@ has been ruled a GDPR violation by German courts — it triggered a wave of
 Abmahnungen. If you want a custom typeface, self-host the font files.
 
 The corporate site loads no analytics and has no cookie banner. This statement
-does not describe the separate holiday application: its analytics and automatic
-browser storage are documented in the app's own policy and require the owner review
-recorded in `docs/GH-253-review.md`.
+does not describe the separate holiday application, which has its own policy.
 
 ## Deploy — GitHub Pages
 
