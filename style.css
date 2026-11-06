@@ -1177,9 +1177,10 @@ main.support .lede span { display: inline-block; }
   /* hero-copy dissolves into the grid so the store row can sit below the carousel */
   .home .hero-grid { padding-top: 24px; gap: 24px; }
   .hero-copy { display: contents; }
-  .carousel { order: 1; margin-top: -8px; }
+  .carousel { order: 1; margin-top: -24px; }
   .hero-stores { order: 2; }
   .hero-copy .chip-brand { display: none; }
+  .hero-actions { justify-content: center; gap: 12px 24px; }
   /* sized from the screen so the title stays on one line, in German too (the longer one) */
   .home h1 { font-size: min(36px, calc((100vw - 40px) / 11.8)); }
   /* label and store tags fill the row, 4px further in than the page gutter */
@@ -1199,6 +1200,10 @@ main.support .lede span { display: inline-block; }
   .app-head { gap: 12px; }
   .home .app-head h3 { font-size: 20px; }
   .badge-row { flex-wrap: wrap; }
+  /* store badges get their own centred row, with a divider matching the footer's top border */
+  .app-foot { row-gap: 8px; }
+  .badge-row-lg { width: 100%; justify-content: center; gap: 12px 24px; padding-bottom: 20px; border-bottom: 1px solid var(--ink-50); }
+  .home .support-link { margin-left: auto; }
   .contact-action { justify-self: stretch; align-items: stretch; text-align: center; }
   .home .contact-mail { justify-content: center; font-size: 15px; padding: 16px 12px; gap: 8px; }
 }
